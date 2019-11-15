@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <script src="js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+首页----
+<div id="user">
+</div>
+</body>
+<script>
+$.post("user/getUser",{},function (data) {
+    if(data){
+        $("#user").append("<a href=\"javascript:void(0);\" >"+data.name+"</a>");
+    }else {
+        $("#user").append("<a href=\"login.html\" >登录</a>");
+    }
+});
+</script>
+</html>
